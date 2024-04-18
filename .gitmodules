@@ -1,3 +1,6 @@
 [submodule "evals"]
 	path = evals
 	url = https://github.com/openai/evals
+[submodule "promptbench"]
+	path = promptbench
+	url = https://github.com/microsoft/promptbench

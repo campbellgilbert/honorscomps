@@ -2,6 +2,8 @@ from openai import OpenAI
 #WE NOW HAVE THIS RUNNING!!!!!!!!!!!!!!!!!!!11  
 #sk-IN1fbBq1GLvQTYQrymjrT3BlbkFJcuvCrbj6e8BezNGZW3mF3
 #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 <- use this one
+import os
+api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI()
 
 completion = client.chat.completions.create(
