@@ -1,0 +1,14 @@
+{
+    "Evaluatory Levels": ["Basic Grammar", "Basic Argument Structure", "Quoting & Language Integration", "Cognition", "Metacognition"],
+
+    "Basic Grammar": ["grammar", "punctuation", "syntax", "spelling", "notation", "comma", "period", "semicolon", "run-on", "adverb", "clause"],
+
+    "Basic Argument Structure": ["hypothesis", "thesis", "claim", "elaborate", "argue", "analysis", "evidence", "support", "engage", "dispute", "topic", "terms", "definition"],
+   
+    "Language Integration": ["specifies", "interpret", "quote", "language", "word choice", "verbiage", "folds in", "interacts", "attention", "integrate", "cited", "phrase", "contextualize"],
+
+    "Cognition":  ["lucid", "precise", "well-organized", "develops", "disputable", "complexity", "focus", "simplify", "oversimplify", "complex", "overcomplicate", "reasoning"],
+
+    "Metacognition": ["voice", "wit", "ethos", "rigor", "confusing", "vague", "understanding", "depth", "significant", "ambiguity", "original", "persuasive"]
+}
+  
