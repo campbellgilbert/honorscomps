@@ -19,8 +19,6 @@ prompts = np.array(
     "You are giving feedback on a student's essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say “Looks good!”. FOr example, does the student use proper grammar, spelling, and argument structure?"]
 )
 
-
-
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[

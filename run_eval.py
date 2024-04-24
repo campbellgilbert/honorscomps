@@ -4,7 +4,7 @@ api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI()
 
 prompts = [
-    "You are a doctoral English student with a focus on pedagogical studies giving feedback on a high school student's AP Language exam essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say “Looks good!”.", 
+    "You are a doctoral English student with a focus on pedagogical studies giving feedback on a high school student's AP Language exam essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say “Looks good!”.",
     "You are giving feedback on a student's essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say “Looks good!”. For example, does the student use proper grammar, spelling, and argument structure?",
     "You are a doctoral English student with a focus on pedagogical studies giving feedback on a high school student’s AP Language exam essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say “Looks good!”."
 ]
@@ -31,7 +31,7 @@ for prompt in prompts:
         print()
         print("response: ", reply)
         responses.append(reply)
-        if (any(substring in reply for substring in keywords)):
+        if(any(substring in reply for substring in keywords)):
             
             correct += 1
         total += 1
