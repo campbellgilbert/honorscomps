@@ -1,6 +1,10 @@
-import promptbench as pb
 from tqdm import tqdm
 import json
+import sys
+
+# Add the directory of promptbench to the Python path
+sys.path.append('/honorscomps/promptbench')
+import promptbench as pb
 
 print('All supported datasets: ')
 print(pb.SUPPORTED_DATASETS)
@@ -104,6 +108,9 @@ for prompt in prompts:
     # evaluate
     #score = pb.Eval.compute_cls_accuracy(preds, labels)
     #print(f"{score:.3f}, {prompt}")
+
+#now we want to load this to a file...
+
 
 print("keyword predictions vs keyword actuals: ", sum(a == b for a, b in zip(predicted_keywords, actual_keywords)) / len(predicted_keywords))
 print()
