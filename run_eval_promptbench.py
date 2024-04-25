@@ -2,6 +2,9 @@ import promptbench as pb
 from tqdm import tqdm
 import json
 
+print('All supported datasets: ')
+print(pb.SUPPORTED_DATASETS)
+
 #load dataset
 #FIXME -- collate into 1 file?
 f = open('GRADE_inputs.json')
@@ -9,9 +12,17 @@ dataset = json.load(f)
 q = open('GRADE_prompts.json')
 prompts = json.load(q)
 
-# load the model
-model = pb.LLMModel(model='gpt-3.5-turbo', max_new_tokens=10, temperature=0.0001)
+# print all supported models in promptbench
+print('All supported models: ')
+print(pb.SUPPORTED_MODELS)
+
+# load a model, flan-t5-large, for instance.
+model = pb.LLMModel(model='gpt-3.5-turbo', max_new_tokens=300, temperature=0.0001)
 #model = pb.LLMModel(model='gpt-4', max_new_tokens=300, temperature=0.0001)
+#model = pb.LLMModel(model='gemini-pro', max_new_tokens=300, temperature=0.0001)
+#model = pb.LLMModel(model='llama2-70b', max_new_tokens=300, temperature=0.0001)
+#unforch looks like pb doesnt support mistral, claude, or most recent llama
+
 """
 ['google/flan-t5-large', 'llama2-7b', 'llama2-7b-chat', 'llama2-13b', 'llama2-13b-chat', 'llama2-70b', 'llama2-70b-chat', 'phi-1.5', 'phi-2', 'palm', 'gpt-3.5-turbo', 'gpt-4', 'gpt-4-1106-preview', 'gpt-3.5-turbo-1106', 'vicuna-7b', 'vicuna-13b', 'vicuna-13b-v1.3', 'google/flan-ul2', 'gemini-pro']
 """

@@ -1,7 +1,28 @@
 from openai import OpenAI
 import os
-api_key = os.getenv('OPENAI_API_KEY')
-client = OpenAI()
+import promptbench as pb
+
+dataset_name = "gsm8k"
+dataset = pb.DatasetLoader.load_dataset(dataset_name)
+
+method = pb.PEMethod(method='emotion_prompt', 
+                        dataset=dataset_name,
+                        verbose=True,  # if True, print the detailed prompt and response
+                        prompt_id = 1  # for emotion_prompt 
+                        )
+
+print('All supported models: ')
+print(pb.SUPPORTED_MODELS)
+
+# load a model, flan-t5-large, for instance.
+model = pb.LLMModel(model='gpt-3.5-turbo', max_new_tokens=300, temperature=0.0001)
+
+results = method.test(dataset, 
+                      model, 
+                      num_samples=5 # if don't set the num_samples, method will use all examples in the dataset
+                      )
+
+
 
 prompts = [
     "You are a doctoral English student with a focus on pedagogical studies giving feedback on a high school student's AP Language exam essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say “Looks good!”.",
@@ -37,8 +58,7 @@ for prompt in prompts:
         total += 1
 
 print("total: ", total)
-print("correct: ", correct)"""
-
+print("correct: ", correct)
 output = "Collaboration can also heavily effect workflow as well as reduce motivation of others if there is no cooperation between everyone. Another example being the engineering field, which requires a heavy amount of collaborative work. They tackle multiple aspects of a singular issue that multiple people have input on. Everyone's work is considered in order to find easier ways to fix the issue. Since this field requires people to listen to each other, if one person tries to overpower the workflow gets disrupted. The small conflict can lead to bigger problems such as not being able to solve the issue, slower work, no other inputs, etc. The forceful behaviour reduces the progression in work and delays issues that would be solved with collaborative work since the workers are resentful."
 keywords = ["collaboration", "progression", "delay", "resent"]
 
@@ -47,4 +67,4 @@ for i in keywords:
         print(i)
 numKeywords = sum(1 for substring in keywords if substring in output.lower())
 
-print(numKeywords)
+print(numKeywords)"""
