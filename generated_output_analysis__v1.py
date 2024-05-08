@@ -8,7 +8,7 @@ import json
 #credit to claude opus 3 for the bulk of this code, outstanding work
 # Load the Excel files into pandas DataFrames
 df_claude = pd.read_excel('database_claude.xlsx')
-df_chatgpt = pd.read_excel('database.xlsx')
+df_chatgpt = pd.read_excel('database_gpt4.xlsx')
 
 # Merge the two DataFrames based on the similar columns -- ideally would've loaded this all into 1 excel sheet or found a better way of analyzing this without any excel sheets but hey man i'm on a deadline here
 merged_df = pd.merge(df_claude, df_chatgpt, on=['1. prompt', '2. type', '3. text_sample', '4. keywords'], suffixes=('_claude', '_chatgpt'))
