@@ -55,5 +55,10 @@
     {
         "prompt": "You are a high school English teacher giving feedback on a a high school student's AP Language exam essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say 'Looks good!'. Get to the point.: ",
         "type": "no-yapping"
+    },
+
+    {
+        "prompt": "You are a high school English teacher giving feedback on a a high school student's AP Language exam essay. Point out any issues with the following writing sample; if there is nothing noticeably missing or incorrect, say 'Looks good!'. Give focused, high-level, metacognitive feedback that draws: ",
+        "type": "metacognitive"
     }
 ] 
