@@ -3,6 +3,12 @@ import os
 import promptbench as pb
 import csv
 # my data rows as dictionary objects
+
+
+models = pb.SUPPORTED_MODELS
+print(models)
+
+
 mydict = [{'branch': 'COE', 'cgpa': '9.0',
            'name': 'Nikhil', 'year': '2'},
           {'branch': 'COE', 'cgpa': '9.1',
